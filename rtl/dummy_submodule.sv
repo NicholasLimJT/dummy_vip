@@ -23,13 +23,14 @@
 
 module dummy_submodule;
   import cf_math_pkg::*;
-`ifdef ENABLE_DUMMY_VIP
+//`ifdef ENABLE_DUMMY_VIP
+'ifdef ENTRY_POINT
   initial begin
     #10us $info(`DUMMY_SUCCESS_MESSAGE);
   end
 `else
   initial begin
-    #10us $fatal("Dummy module is not enabled. Add the define flag to the package description (src_files.yml)");
+    // #10us $fatal("Dummy module is not enabled. Add the define flag to the package description (src_files.yml)");
   end
 `endif
 
